@@ -1,0 +1,11 @@
+
+
+sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm
+git clone http://git.yoctoproject.org/git/poky
+git checkout -b fido origin/fido
+source oe-init-build-env
+
+#Initializing the build environment creates a conf/local.conf configuration file in the Build Directory. You need to manually edit this file to specify the machine you are building:
+#MACHINE ?= "beaglebone"
+            
+bitbake core-image-minimal

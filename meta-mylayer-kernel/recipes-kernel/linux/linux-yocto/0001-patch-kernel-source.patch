@@ -1,0 +1,29 @@
+From 1828c547ea648fcc086a4cb6d66d512636abeff0 Mon Sep 17 00:00:00 2001
+From: dainiz briediz <dr1@gmx.eu>
+Date: Tue, 31 May 2016 13:02:53 +0200
+Subject: [PATCH] patch kernel source
+
+---
+ init/calibrate.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/init/calibrate.c b/init/calibrate.c
+index 520702d..7c6a26c 100644
+--- a/init/calibrate.c
++++ b/init/calibrate.c
+@@ -267,7 +267,11 @@ void calibrate_delay(void)
+ 	unsigned long lpj;
+ 	static bool printed;
+ 	int this_cpu = smp_processor_id();
+-
++printk("*********************************************");
++printk("*********************************************");
++printk("*******************  HELLO  *****************");
++printk("*********************************************");
++printk("*********************************************");
+ 	if (per_cpu(cpu_loops_per_jiffy, this_cpu)) {
+ 		lpj = per_cpu(cpu_loops_per_jiffy, this_cpu);
+ 		if (!printed)
+-- 
+1.9.1
+
